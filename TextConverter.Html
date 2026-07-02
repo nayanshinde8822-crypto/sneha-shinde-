@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Converter</title>
+</head>
+
+<body>
+
+    <h1>Text Converter</h1>
+
+    <textarea id="content" rows="10" cols="50" oninput="countword()"></textarea>
+
+    <br><br>
+
+    <button onclick="convertToUpperCase()">UPPERCASE</button>
+    <button onclick="convertToLowerCase()">lowercase</button>
+    <button onclick="countword()">countword</button>
+
+    <p id="result">letter Count: 0</p>
+
+    <script>
+        function convertToUpperCase() {
+            let text = document.getElementById("content");
+            text.value = text.value.toUpperCase();
+            countword();
+        }
+
+        function convertToLowerCase() {
+            let text = document.getElementById("content");
+            text.value = text.value.toLowerCase();
+            countword();
+        }
+
+        function countword() {
+            let text = document.getElementById("content").value.trim();
+
+            let count = text === ""
+                ? 0
+                : text.split(/\s+/).length;
+
+            document.getElementById("result").innerText =
+                "Word Count: " + count;
+        }
+    </script>
+
+</body>
+
+</html>
