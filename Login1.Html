@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+</head>
+<body>
+
+    <h1>Login Form</h1>
+
+    <input type="text" id="user" placeholder="Enter username">
+    <br><br>
+
+    <input type="password" id="pass" placeholder="Enter password">
+    <br><br>
+
+    <input type="tel" id="phno" placeholder="Enter phone number">
+    <br><br>
+
+    <input type="email" id="email" placeholder="Enter email">
+    <br><br>
+
+    <button id="loginBtn" onclick="getdata()">Login</button>
+
+    <h3 id="msg"></h3>
+
+    <script>
+        var attempts = 4;
+
+        function getdata() {
+            var username = "sneha";
+            var password = "sneha@123";
+            var phonenumber = "8767213545";
+            var email = "snehashinde4456@gmail.com";
+
+            var a = document.getElementById("user").value;
+            var b = document.getElementById("pass").value;
+            var c = document.getElementById("phno").value;
+            var d = document.getElementById("email").value;
+
+            var msg = document.getElementById("msg");
+            var btn = document.getElementById("loginBtn");
+
+            if (a === username && b === password && c === phonenumber && d === email) {
+
+                msg.innerHTML = "✅ Login Successful";
+                msg.style.color = "green";
+
+            } else {
+                attempts--;
+
+                if (attempts > 0) {
+                    msg.innerHTML =
+                        `❌ Login Unsuccessful. Attempts left: ${attempts}`;
+                    msg.style.color = "red";
+                } else {
+                    msg.innerHTML = "🚫 Account Locked! No attempts left.";
+                    msg.style.color = "red";
+                    btn.disabled = true;
+                }
+            }
+        }
+    </script>
+
+</body>
+</html> --> 
