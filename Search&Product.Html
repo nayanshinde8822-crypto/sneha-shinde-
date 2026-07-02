@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Lite</title>
+    <style>
+        .card{
+            border:1px solid black;
+            width:200px;
+            padding:10px;
+            margin:10px;
+            display:inline-block;
+            text-align:center;
+        }
+        img{
+            width:150px;
+            height:150px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Amazon Lite</h1>
+
+<input type="text" id="searchBar" placeholder="Search here...">
+<select id="sort">
+    <option value="">Sort Price</option>
+    <option value="low">Low to High</option>
+    <option value="high">High to Low</option>
+</select>
+
+<div id="productContainer"></div>
+
+<script>
+let container = document.getElementById("productContainer");
+let search = document.getElementById("searchBar");
+
+let products = [
+{
+    pname: "mouse",
+    cname: "titan",
+    price: 4000,
+    img: "https://m.media-amazon.com/images/I/61UxfXTUyvL._AC_UY1000_.jpg"
+},
+{
+    pname: "mobile",
+    cname: "samsung",
+    price: 25000,
+    img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500"
+},
+{
+    pname: "laptop",
+    cname: "hp",
+    price: 55000,
+    img: "https://m.media-amazon.com/images/I/71f5Eu5lJSL.jpg"
+}
+];
+
+function display(list){
+    container.innerHTML = "";
+
+    list.forEach((item) => {
+        container.innerHTML += `
+        <div class="card">
+            <img src="${item.img}">
+            <h3>${item.pname}</h3>
+            <p>Brand : ${item.cname}</p>
+            <p>Price : ₹${item.price}</p>
+        </div>
+        `;
+    });
+}
+
+display(products);
+
+    search.addEventListener("keyup", () => {
+    let value = search.value.toLowerCase();
+
+    let result = products.filter((item) =>
+        item.pname.toLowerCase().includes(value)
+    );
+    
+    
+    display(result);
+    
+});
+</script>
+
+</body>
+</html>
