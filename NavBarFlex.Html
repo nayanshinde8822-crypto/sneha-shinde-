@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dropdown Navbar</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(to right,#8e6ac8,#e3b0c9);
+}
+
+nav{
+    background:#2f92b2;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+}
+
+.logo{
+    color:#fff;
+    font-size:40px;
+    font-weight:bold;
+}
+
+.menu{
+    list-style:none;
+    display:flex;
+}
+
+.menu li{
+    position:relative;
+}
+
+.menu li a{
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    padding:20px;
+    font-size:20px;
+}
+
+.menu li:hover{
+    background:#732597;
+}
+
+/* First Dropdown */
+.dropdown{
+    display:none;
+    position:absolute;
+    top:60px;
+    left:0;
+    background:#2f92b2;
+    list-style:none;
+    min-width:230px;
+}
+
+.dropdown li{
+    position:relative;
+}
+
+.dropdown li a{
+    padding:15px;
+}
+
+/* Second Dropdown */
+.submenu{
+    display:none;
+    position:absolute;
+    left:230px;
+    top:0;
+    background:#2f92b2;
+    list-style:none;
+    min-width:250px;
+}
+
+.dropdown li:hover .submenu{
+    display:block;
+}
+
+.menu li:hover .dropdown{
+    display:block;
+}
+
+.search{
+    color:#fff;
+    font-size:30px;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<div class="logo">Logo</div>
+
+<ul class="menu">
+<li><a href="#">HOME</a></li>
+
+<li>
+<a href="#">HTML & CSS ▼</a>
+
+<ul class="dropdown">
+<li><a href="#">Web Design</a></li>
+<li><a href="#">Login Forms</a></li>
+<li><a href="#">Card Design</a></li>
+
+<li>
+<a href="#">More ▶</a>
+
+<ul class="submenu">
+<li><a href="#">Neumorphism</a></li>
+<li><a href="#">Pre-loader</a></li>
+<li><a href="#">Glassmorphism</a></li>
+</ul>
+
+</li>
+
+</ul>
+
+</li>
+
+<li><a href="#">JAVASCRIPT ▼</a></li>
+<li><a href="#">ABOUT US</a></li>
+<li><a href="#">CONTACT US</a></li>
+</ul>
+
+<div class="search">🔍</div>
+
+</nav>
+
+</body>
+</html>
