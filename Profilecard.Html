@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Profile Card</title>
+<style>
+body{
+    background:#d8f3ff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-family:Arial;
+}
+.card{
+    width:650px;
+    background:#e9f9ff;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 0 10px gray;
+}
+.profile{
+    display:flex;
+    align-items:center;
+}
+.profile img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    margin-right:30px;
+}
+.stats{
+    display:flex;
+    gap:50px;
+    margin:20px 0;
+}
+button{
+    padding:12px 30px;
+    border-radius:8px;
+    font-size:16px;
+}
+.follow{
+    background:black;
+    color:white;
+    border:none;
+}
+.view{
+    background:white;
+    border:2px solid black;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="profile">
+        <img src="myphoto.img" alt="My Photo">
+
+        <div>
+            <h1>Sneha Shinde</h1>
+            <h3>@sneha</h3>
+
+            <p>
+                I'm a Front End Developer. Follow me to see my new work.
+            </p>
+
+            <div class="stats">
+                <div>
+                    <h2>15K</h2>
+                    <p>Views</p>
+                </div>
+
+                <div>
+                    <h2>82</h2>
+                    <p>Projects</p>
+                </div>
+
+                <div>
+                    <h2>1.3M</h2>
+                    <p>Followers</p>
+                </div>
+            </div>
+
+            <button class="follow">Follow</button>
+            <button class="view">View Profile</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
